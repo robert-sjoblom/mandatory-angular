@@ -1,13 +1,17 @@
-<div class="board">
+<div class="container">
+  <div class="row">
+    <div class="board col-sm-12">
+      <button (click)="display = !display" style="margin: 20px 0">
+        New Task
+      </button>
+      <add-task *ngIf="display"></add-task>
+    </div>
+  </div>
 
-  <!-- Add click event binding for this button... -->
-  <button 
-    style="margin: 20px 0"
-    >
-    New Task
-  </button>
-  
-  <div class="lists">
-    <!-- Markup for task lists here... -->
+  <div class="row">
+    <div class="lists col-sm-12">
+
+      <task-list *ngFor="let status of statusTypes" [statusType]="status"></task-list>
+    </div>
   </div>
 </div>

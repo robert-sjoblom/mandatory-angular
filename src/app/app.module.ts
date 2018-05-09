@@ -9,6 +9,7 @@ import { TaskComponent } from './task/task.component';
 import { TaskService } from './task.service';
 import { UtilService } from './util.service';
 import { TaskformComponent } from './taskform/taskform.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TaskformComponent } from './taskform/taskform.component';
     TaskboardComponent,
     TasklistComponent,
     TaskComponent,
-    TaskformComponent
+    TaskformComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
