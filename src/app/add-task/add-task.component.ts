@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TaskService } from '../task.service';
 
 @Component({
@@ -7,17 +7,12 @@ import { TaskService } from '../task.service';
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css']
 })
-export class AddTaskComponent implements OnInit {
+export class AddTaskComponent {
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private taskService: TaskService) { }
-
-  ngOnInit() {
-  }
-
   submit({title, description}) {
-    console.log(`ADD-TASK/submit:
-    title: ${title}, description: ${description}`);
-
     this.taskService.addTask(title, description);
+    this.close.emit(true); // let our parent know that shit's submitted.
   }
 }

@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { TaskService } from '../task.service';
+import { UtilService } from '../util.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -8,5 +10,9 @@ import { Component, Input } from '@angular/core';
 })
 export class TaskComponent {
   @Input() task;
-  constructor() {}
+  constructor(private utilService: UtilService, private taskService: TaskService) { }
+
+  onChange(id, val) {
+    this.taskService.updateTask(id, val);
+  }
 }

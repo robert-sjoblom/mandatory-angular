@@ -1,15 +1,24 @@
 <div class="task">
   <div class="header">
-      <div>
-        {{ task.title }}
-      </div>
-      <!-- Markup for dropdown menu here... -->
+    <div>
+      {{ task.title }}
+    </div>
+
+    <form name="selectForm">
+      <select 
+        (change)="onChange(task.id, $event.target.value)"
+        name="select"
+      >
+        <option
+        *ngFor="let obj of utilService.getStatusTypes()"
+        [ngValue]="task.status"
+        [selected]="obj === task.status"
+        >{{ obj }}</option>
+      </select>
+    </form>
   </div>
   <hr>
   <div class="body">
-      {{ task.description }}
-  </div>
-  <div>
-    Status: {{ task.status }}
+    {{ task.description }}
   </div>
 </div>

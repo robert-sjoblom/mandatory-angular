@@ -22,6 +22,13 @@ export class TaskService {
   }
 
   updateTask(id: number, status: StatusType) {
+    this.tasks = this.tasks.map(item => {
+      if (item.id === id) {
+        item.status = status;
+      }
+      return item;
+    });
+    this.updateSubscribers();
     // complete the code to update a task's status...
   }
 

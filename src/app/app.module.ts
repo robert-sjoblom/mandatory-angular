@@ -1,15 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { AddTaskComponent } from './add-task/add-task.component';
 import { AppComponent } from './app.component';
+import { TaskService } from './task.service';
+import { TaskComponent } from './task/task.component';
 import { TaskboardComponent } from './taskboard/taskboard.component';
 import { TasklistComponent } from './tasklist/tasklist.component';
-import { TaskComponent } from './task/task.component';
-import { TaskService } from './task.service';
 import { UtilService } from './util.service';
-import { TaskformComponent } from './taskform/taskform.component';
-import { AddTaskComponent } from './add-task/add-task.component';
+
 
 
 @NgModule({
@@ -18,7 +17,6 @@ import { AddTaskComponent } from './add-task/add-task.component';
     TaskboardComponent,
     TasklistComponent,
     TaskComponent,
-    TaskformComponent,
     AddTaskComponent
   ],
   imports: [

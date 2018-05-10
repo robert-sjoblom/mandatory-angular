@@ -15,6 +15,5 @@ export class TaskboardComponent implements OnInit {
 
   ngOnInit() {
     this.statusTypes = this.utilService.getStatusTypes();
-    console.log(this.statusTypes);
   }
 }

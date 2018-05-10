@@ -4,13 +4,12 @@
       <button (click)="display = !display" style="margin: 20px 0">
         New Task
       </button>
-      <add-task *ngIf="display"></add-task>
+      <add-task *ngIf="display"   (close)="display = !display"></add-task>
     </div>
   </div>
 
   <div class="row">
     <div class="lists col-sm-12">
-
       <task-list *ngFor="let status of statusTypes" [statusType]="status"></task-list>
     </div>
   </div>
